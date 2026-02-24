@@ -3,7 +3,7 @@ import { describe, it, before, after } from "node:test";
 import assert from "node:assert";
 import { createMockHttpServer } from "./mock-http-server.js";
 
-describe("main handler", () => {
+describe("realtimeMonitor handler", () => {
   let mockHttp;
   let originalEnv;
 
@@ -22,18 +22,15 @@ describe("main handler", () => {
     process.env = originalEnv;
   });
 
-  it("handler connects to WebSocket, fetches heartbeat URLs, and returns Finished", async () => {
-    const handler = (await import("../src/main.js")).default;
-    const res = {
-      _body: null,
-      send(body) {
-        this._body = body;
-        return this;
-      },
+  it("handler connects to WebSocket, fetches heartbeat URLs, and calls callback with Finished", async () => {
+    const handler = (await import("../src/realtimeMonitor.js")).default;
+    let result;
+    const callback = (body) => {
+      result = body;
     };
 
-    await handler({ res });
+    await handler(callback);
 
-    assert.strictEqual(res._body, "Finished");
+    assert.strictEqual(result, "Finished");
   });
 });
