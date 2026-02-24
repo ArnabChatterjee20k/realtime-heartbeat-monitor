@@ -1,0 +1,102 @@
+lockfileVersion: "9.0"
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+  .:
+    dependencies:
+      appwrite:
+        specifier: ^18.1.1
+        version: 18.2.0
+      node-appwrite:
+        specifier: ^17.0.0
+        version: 17.2.0
+      node-window-polyfill:
+        specifier: ^1.0.4
+        version: 1.0.4
+    devDependencies:
+      dotenv:
+        specifier: ^17.3.1
+        version: 17.3.1
+      prettier:
+        specifier: ^3.0.0
+        version: 3.8.1
+
+packages:
+  appwrite@18.2.0:
+    resolution:
+      {
+        integrity: sha512-g7pQpsxqR7+amEIaQLXMN4XzdQKenTHnGdA4s7UUJdZufhlHdJby8895h8z893+S0XipeHZhi0wpxYA2An95Rg==,
+      }
+
+  dotenv@17.3.1:
+    resolution:
+      {
+        integrity: sha512-IO8C/dzEb6O3F9/twg6ZLXz164a2fhTnEWb95H23Dm4OuN+92NmEAlTrupP9VW6Jm3sO26tQlqyvyi4CsnY9GA==,
+      }
+    engines: { node: ">=12" }
+
+  node-appwrite@17.2.0:
+    resolution:
+      {
+        integrity: sha512-naYUsVZEdF6YKF/q/s0DBQkAHJj2RhEWwmcXrkbfAAPc3Bn+D3CCftBqyNWeo17JBCoYWqQEgT2Od9xOVQR26A==,
+      }
+
+  node-fetch-native-with-agent@1.7.2:
+    resolution:
+      {
+        integrity: sha512-5MaOOCuJEvcckoz7/tjdx1M6OusOY6Xc5f459IaruGStWnKzlI1qpNgaAwmn4LmFYcsSlj+jBMk84wmmRxfk5g==,
+      }
+
+  node-window-polyfill@1.0.4:
+    resolution:
+      {
+        integrity: sha512-Od/jDxv5w7gtZfIS+Czy0UgLQldtituEjT9djgykQK4yq/hKySc3GXTXuUvxKvpM+J/+AwO789ojLmq2Jk8coQ==,
+      }
+
+  prettier@3.8.1:
+    resolution:
+      {
+        integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==,
+      }
+    engines: { node: ">=14" }
+    hasBin: true
+
+  ws@7.5.10:
+    resolution:
+      {
+        integrity: sha512-+dbF1tHwZpXcbOJdVOkzLDxZP1ailvSxM6ZweXTegylPny803bFhA+vqBYw4s31NSAk4S2Qz+AKXK9a4wkdjcQ==,
+      }
+    engines: { node: ">=8.3.0" }
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
+snapshots:
+  appwrite@18.2.0: {}
+
+  dotenv@17.3.1: {}
+
+  node-appwrite@17.2.0:
+    dependencies:
+      node-fetch-native-with-agent: 1.7.2
+
+  node-fetch-native-with-agent@1.7.2: {}
+
+  node-window-polyfill@1.0.4:
+    dependencies:
+      ws: 7.5.10
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
+  prettier@3.8.1: {}
+
+  ws@7.5.10: {}

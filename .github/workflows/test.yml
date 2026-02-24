@@ -1,0 +1,29 @@
+name: Test
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      APP_ENV: test
+      APPWRITE_FUNCTION_API_ENDPOINT: ${{ secrets.APPWRITE_FUNCTION_API_ENDPOINT }}
+      APPWRITE_FUNCTION_PROJECT_ID: ${{ secrets.APPWRITE_FUNCTION_PROJECT_ID }}
+      APPWRITE_DATABASE_ID: ${{ secrets.APPWRITE_DATABASE_ID }}
+      APPWRITE_COLLECTION_ID: ${{ secrets.APPWRITE_COLLECTION_ID }}
+      APPWRITE_DOCUMENT_ID: ${{ secrets.APPWRITE_DOCUMENT_ID }}
+      APPWRITE_API_KEY: ${{ secrets.APPWRITE_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+      - run: npm test

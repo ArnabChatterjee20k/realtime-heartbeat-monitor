@@ -1,0 +1,20 @@
+{
+  "name": "realtime-heartbeat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "format": "prettier --write .",
+    "test": "node --test --test-force-exit test/*.test.js"
+  },
+  "dependencies": {
+    "appwrite": "^18.1.1",
+    "node-appwrite": "^17.0.0",
+    "node-window-polyfill": "^1.0.4"
+  },
+  "devDependencies": {
+    "dotenv": "^17.3.1",
+    "prettier": "^3.0.0"
+  }
+}
